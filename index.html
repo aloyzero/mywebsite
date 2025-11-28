@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my profile</title>
+    <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/a5/9f/ea/a59fea9aec2924e3223da2e9f20976cf.jpg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cinzel', 'Arial Black', serif;
+            background-color: #000000;
+            background-image: url('https://i.pinimg.com/1200x/da/7f/ed/da7fed7b88a88c06ec7702298d4e22b2.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: #CCCCCC;
+            line-height: 1.6;
+            cursor: url('http://www.fillster.com/myspace-cursors/27.ani'), url('http://www.fillster.com/myspace-cursors/27.gif'), pointer !important;
+            letter-spacing: 1px;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #0a0a0a;
+            border: 3px solid #FF0000;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 48px;
+            color: #FF0000;
+            text-shadow: 2px 2px 4px #000, 0 0 10px #FF0000, 0 0 20px #660000;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .header p {
+            color: #CCCCCC;
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .header-icon {
+            height: 30px;
+            width: 30px;
+            margin: 0 10px;
+            filter: brightness(1.1);
+            vertical-align: middle;
+        }
+
+        .profile-wrapper {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .profile-box {
+            background-color: #0a0a0a;
+            border: 2px solid #FF0000;
+            padding: 15px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+        }
+
+        .profile-box h3 {
+            font-family: 'Cinzel', serif;
+            color: #FF0000;
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-bottom: 2px solid #FF0000;
+            padding-bottom: 10px;
+        }
+
+        .profile-info {
+            text-align: center;
+        }
+
+        .profile-info img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border: 3px solid #FF0000;
+            filter: grayscale(100%) contrast(1.2);
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .profile-details {
+            color: #CCCCCC;
+            font-size: 13px;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .profile-details p {
+            margin-bottom: 8px;
+        }
+
+        .profile-details strong {
+            color: #FF0000;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .content-box {
+            background-color: #0a0a0a;
+            border: 2px solid #FF0000;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+        }
+
+        .content-box h2 {
+            font-family: 'Cinzel', serif;
+            color: #FF0000;
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-bottom: 2px solid #FF0000;
+            padding-bottom: 10px;
+        }
+
+        .content-box p {
+            color: #CCCCCC;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            font-family: 'Cinzel', serif;
+        }
+        
+        a {
+            color: #FF0000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #FFFFFF;
+            text-shadow: 0 0 10px #FF0000;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: #FF0000;
+            color: #000000;
+            padding: 10px 20px;
+            border: 2px solid #FF0000;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: #000000;
+            color: #FF0000;
+            box-shadow: 0 0 15px #FF0000;
+        }
+
+        .friends-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .friend-card {
+            text-align: center;
+            border: 2px solid #FF0000;
+            padding: 10px;
+            background-color: #0a0a0a;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+        }
+
+        .friend-card img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border: 2px solid #FF0000;
+            margin-bottom: 8px;
+            filter: grayscale(100%) contrast(1.1);
+        }
+
+        .friend-card p {
+            color: #FF0000;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .interests-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .interest-item {
+            background-color: #1a1a1a;
+            border-left: 3px solid #FF0000;
+            padding: 10px;
+            color: #CCCCCC;
+        }
+
+        .interest-item strong {
+            color: #FF0000;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #CCCCCC;
+            border-top: 2px solid #FF0000;
+            margin-top: 30px;
+            background-color: #0a0a0a;
+        }
+
+        .divider {
+            height: 2px;
+            background-color: #FF0000;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .profile-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .friends-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><img src="https://i.pinimg.com/736x/08/e9/bc/08e9bcd17b82ca6bdd51e90cbec90c19.jpg" alt="icon" class="header-icon"> MY WEBSITE <img src="https://i.pinimg.com/736x/08/e9/bc/08e9bcd17b82ca6bdd51e90cbec90c19.jpg" alt="icon" class="header-icon"></h1>
+            <p>all about me</p>
+        </div>
+
+        <div class="profile-wrapper">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="profile-box">
+                    <h3>Profile</h3>
+                    <div class="profile-info">
+                        <img src="https://i.pinimg.com/1200x/e6/f5/fa/e6f5fa87d12edb41d70e8d0c1e6c82a1.jpg" alt="Profile">
+                        <div class="profile-details">
+                            <p><strong>Name:</strong> Bouchra</p>
+                            <p><strong>Age:</strong> 19</p>
+                           
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-box">
+                    <h3>Contact</h3>
+                    <div class="button-group">
+                        <a href="https://www.instagram.com/toxicsad18/" target="_blank"><button class="btn">Instagram</button></a>
+                        <a href="https://open.spotify.com/user/317fhg27j7dxnoh7k5cxvgcd4jgm" target="_blank"><button class="btn">Spotify</button></a>
+                    </div>
+                </div>
+
+                <div class="profile-box">
+                    <h3>My Work</h3>
+                    <div class="button-group">
+                        <a href="https://bouchra81.pixieset.com/pics/" target="_blank"><button class="btn">View Work</button></a>
+                    </div>
+                </div>
+
+                <div class="profile-box">
+                    <h3>Favorite Bands</h3>
+                    <div class="profile-details">
+                        <p>• <strong>Bethlehem</strong></p>
+                        <p>• <strong>happy days </strong></p>
+                        <p>• <strong> lifelover</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="content-box">
+                    <h2>About Me</h2>
+        <P>A fellow English student fell in love with the study of language later in her life because since day one she loved technology and everything related to it.,</p>
+<P>Gaming, programming (web development, etc.) graphic design, and a love for tech and language lead her to follow both her passions without following any norms pressed on her. She returned to the essence of rebellion and authenticity.</P>
+
+                <div class="divider"></div>
+
+                <div class="content-box">
+                    <h2>My Interests</h2>
+                    <div class="interests-list">
+                        <div class="interest-item">
+                            <strong>Music:</strong>
+                            Black Metal, DSBM, FOLK metal
+                            Death metal all whatever talk to my soul
+                        </div>
+                        <div class="interest-item">
+                            <strong>Atmosphere:</strong>
+                            Darkness, calm, Forests
+                        </div>
+                        <div class="interest-item">
+                            <strong>Art:</strong>
+                            gore art, album covers
+                        </div>
+                        <div class="interest-item">
+                            <strong>Literature:</strong>
+                            romanticism , Mythology, fiction 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p style="font-weight: bold; color: #FF0000;"></p>
+        <p>&copy; made with love for darkness </p>
+    </div>
+</body>
+</html>
