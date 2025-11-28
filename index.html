@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my profile</title>
@@ -379,5 +380,26 @@
         <p style="font-weight: bold; color: #FF0000;"></p>
         <p>&copy; made with love for darkness </p>
     </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "firebase/app";
+        import { getAnalytics } from "firebase/analytics";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDV6AnVUdq54OJlh6XNyzuWMehNNT6Vf48",
+          authDomain: "mywebsite-cf084.firebaseapp.com",
+          projectId: "mywebsite-cf084",
+          storageBucket: "mywebsite-cf084.firebasestorage.app",
+          messagingSenderId: "538115496956",
+          appId: "1:538115496956:web:f0a05544ad145c49a5f079",
+          measurementId: "G-HFKJ6HX8XG"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
 </body>
 </html>
