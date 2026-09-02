@@ -607,7 +607,7 @@ const App = () => {
                 </motion.a>
                 
                 <motion.a
-                  href="https://open.spotify.com/user/317fhg27j7dxnoh7k5cxvgcd4jgm"
+                  href="https://github.com/aloyzero"
                   target="_blank"
                   rel="noopener noreferrer"
                   variants={buttonVariants}
@@ -632,9 +632,9 @@ const App = () => {
                     variants={iconVariants}
                     style={{ fontSize: '24px' }}
                   >
-                    🎧
+                    
                   </motion.div>
-                  <span style={{ flex: 1, fontWeight: '600' }}>Spotify</span>
+                  <span style={{ flex: 1, fontWeight: '600' }}>GitHub</span>
                   <motion.div
                     initial={{ x: -100 }}
                     whileHover={{ x: 0 }}
