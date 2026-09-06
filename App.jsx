@@ -261,14 +261,12 @@ const App = () => {
     }
   }
 
-  const interests = [
-    { icon: '🎵', title: 'Music', desc: 'Black Metal, DSBM, Folk Metal, Death Metal' },
-    { icon: '🎨', title: 'Art', desc: 'Gore art, album covers' },
-    { icon: '📖', title: 'Literature', desc: 'Romanticism, Mythology, Fiction' },
-    { icon: '💻', title: 'Technology', desc: 'Web development, programming' },
-    { icon: '🌲', title: 'Atmosphere', desc: 'Darkness, calm, Forests' },
-    { icon: '🎮', title: 'Gaming', desc: 'Atmospheric, immersive experiences' }
-  ]
+  const interests =
+   [
+       { icon: '🎨', title: 'Art', desc: 'drawing ,desinging album covers and artisic expresion ' },
+    { icon: '📖', title: 'Literature', desc: 'Romanticism, Mythology, Fiction , scinentifics studies ' },
+    { icon: '💻', title: 'Technology', desc: 'Web development, Robotics' },
+  ]   
 
   return (
     <motion.div 
